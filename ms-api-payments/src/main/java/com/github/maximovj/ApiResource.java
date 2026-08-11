@@ -11,6 +11,6 @@ public class ApiResource {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String apiTest() {
-        return "Quarkus | API Payments v1.0";
+        return "Quarkus + Java v17 | API Payments v1.0";
     }
 }
