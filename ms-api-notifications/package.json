@@ -4,10 +4,14 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "start": "node ."
+    "start": "node .",
+    "dev": "nodemon ."
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "commonjs",
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
 }
