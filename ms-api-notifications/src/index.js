@@ -3,7 +3,6 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 
-
 app.set('hostname', 'localhost');
 app.set('port', 3017);
 
@@ -13,6 +12,8 @@ app.use(cors({
     allowedHeaders: "*",
     credentials: false,
 }));
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 
 app.get('/',(req, res) => {
     res.send('API Notifications v1.0')
