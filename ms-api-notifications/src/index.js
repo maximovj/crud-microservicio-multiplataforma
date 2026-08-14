@@ -1,8 +1,10 @@
+const http = require('http');
 const express = require('express');
 const cors = require('cors');
-const app = express()
+const app = express();
 
 
+app.set('hostname', 'localhost');
 app.set('port', 3017);
 
 app.use(cors({
@@ -16,9 +18,13 @@ app.get('/',(req, res) => {
     res.send('API Notifications v1.0')
 })
 
-app.listen(app.get('port'),(error) => { 
-    if(error) {
-        throw new Error('Hubo un error');
-    }
-    console.log('Iniciando ms-api-notifications');
-});
+// Modo de desarrollo local
+http.createServer(app)
+    .listen(app.get('port'), app.get('hostname'), (err) => {
+        if(!err?.message) {
+            const path = `http://${app.get('hostname')}:${app.get('port')}`;
+            console.log(`API delployed: ${path}`);
+        } else {
+            console.log(err?.message);
+        }
+    });
