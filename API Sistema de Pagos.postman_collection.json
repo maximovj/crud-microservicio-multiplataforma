@@ -1,0 +1,175 @@
+{
+  "info": {
+    "_postman_id": "c9192220-04fe-49a2-81e9-99537cf4d441",
+    "name": "API Sistema de Pagos",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "49272849",
+    "_collection_link": "https://go.postman.co/collection/49272849-c9192220-04fe-49a2-81e9-99537cf4d441?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "users",
+      "item": [
+        {
+          "name": "::3005 api/users",
+          "request": {
+            "auth": {
+              "type": "bearer"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Jhon\",\r\n    \"lastname\": \"Doe\",\r\n    \"email\": \"jhon.doe.x@example.com\",\r\n    \"password\": \"passwordx\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3005/api/users",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3005",
+              "path": [
+                "api",
+                "users"
+              ]
+            },
+            "description": "Crear un nuevo usuario"
+          },
+          "response": []
+        },
+        {
+          "name": "::3005 api/users",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer"
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:3005/api/users",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3005",
+              "path": [
+                "api",
+                "users"
+              ]
+            },
+            "description": "Obtener todos los usuarios"
+          },
+          "response": []
+        },
+        {
+          "name": "::3005 api/users/1",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer"
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:3005/api/users/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3005",
+              "path": [
+                "api",
+                "users",
+                "1"
+              ]
+            },
+            "description": "Obtener un usuario por ID"
+          },
+          "response": []
+        },
+        {
+          "name": "::3005 api/users/1",
+          "request": {
+            "auth": {
+              "type": "bearer"
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Jhon\",\n    \"lastname\": \"Doe\",\n    \"email\": \"jhon.doe.x@example.com\",\n    \"password\": \"passwordx\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3005/api/users/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3005",
+              "path": [
+                "api",
+                "users",
+                "1"
+              ]
+            },
+            "description": "Actualizar un usuario por ID"
+          },
+          "response": []
+        },
+        {
+          "name": "::3005 api/users/1",
+          "request": {
+            "auth": {
+              "type": "bearer"
+            },
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:3005/api/users/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3005",
+              "path": [
+                "api",
+                "users",
+                "1"
+              ]
+            },
+            "description": "Eliminar un usuario por ID"
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
