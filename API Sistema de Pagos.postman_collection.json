@@ -8,7 +8,7 @@
   },
   "item": [
     {
-      "name": "users",
+      "name": "ms-api-users",
       "item": [
         {
           "name": "::3005 api/users",
@@ -28,12 +28,10 @@
               }
             },
             "url": {
-              "raw": "http://localhost:3005/api/users",
-              "protocol": "http",
+              "raw": "{{HOSTmsApiUsers}}/api/users",
               "host": [
-                "localhost"
+                "{{HOSTmsApiUsers}}"
               ],
-              "port": "3005",
               "path": [
                 "api",
                 "users"
@@ -59,12 +57,10 @@
               "raw": ""
             },
             "url": {
-              "raw": "http://localhost:3005/api/users",
-              "protocol": "http",
+              "raw": "{{HOSTmsApiUsers}}/api/users",
               "host": [
-                "localhost"
+                "{{HOSTmsApiUsers}}"
               ],
-              "port": "3005",
               "path": [
                 "api",
                 "users"
@@ -90,12 +86,10 @@
               "raw": ""
             },
             "url": {
-              "raw": "http://localhost:3005/api/users/1",
-              "protocol": "http",
+              "raw": "{{HOSTmsApiUsers}}/api/users/1",
               "host": [
-                "localhost"
+                "{{HOSTmsApiUsers}}"
               ],
-              "port": "3005",
               "path": [
                 "api",
                 "users",
@@ -124,12 +118,10 @@
               }
             },
             "url": {
-              "raw": "http://localhost:3005/api/users/1",
-              "protocol": "http",
+              "raw": "{{HOSTmsApiUsers}}/api/users/1",
               "host": [
-                "localhost"
+                "{{HOSTmsApiUsers}}"
               ],
-              "port": "3005",
               "path": [
                 "api",
                 "users",
@@ -153,12 +145,10 @@
               "raw": ""
             },
             "url": {
-              "raw": "http://localhost:3005/api/users/1",
-              "protocol": "http",
+              "raw": "{{HOSTmsApiUsers}}/api/users/1",
               "host": [
-                "localhost"
+                "{{HOSTmsApiUsers}}"
               ],
-              "port": "3005",
               "path": [
                 "api",
                 "users",
@@ -320,6 +310,10 @@
   "variable": [
     {
       "key": "URLmsApiGateway",
+      "value": ""
+    },
+    {
+      "key": "HOSTmsApiUsers",
       "value": ""
     }
   ]
