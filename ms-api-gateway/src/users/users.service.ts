@@ -21,8 +21,17 @@ export class UsersService {
     this.msApiUsers = msUrlApis.msApiUsers;
   }
 
-  create(createUserDto: CreateUserDto) {
-    return `This action adds a new user`;
+  async create(createUserDto: CreateUserDto): Promise<CreateUserDto> {
+    const {data} = await firstValueFrom(
+      this.httpService.post(this.msApiUsers, createUserDto)
+      .pipe(
+        catchError((error: AxiosError) => {
+          this.logger.error(error.response?.data);
+          throw `Failed communication with ${this.msApiUsers}`;
+        }), // -- catchError
+      ) // -- pipe
+    );
+    return data;
   }
 
   async findAll(): Promise<string> {
