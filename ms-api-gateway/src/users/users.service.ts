@@ -14,7 +14,7 @@ export class UsersService {
   msApiUsers!: string;
 
   constructor(
-    private configService: ConfigService,
+    private readonly configService: ConfigService,
     private readonly httpService: HttpService,
   ){
     const msUrlApis = configService.get<MsUrlApis>('msUrlApis', { infer: true });
@@ -25,7 +25,7 @@ export class UsersService {
     return `This action adds a new user`;
   }
 
-  async findAll(): Promise<String> {
+  async findAll(): Promise<string> {
     const {data} = await firstValueFrom(
       this.httpService.get(`${this.msApiUsers}`)
       .pipe(
@@ -38,15 +38,33 @@ export class UsersService {
     return data;
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} user`;
+  async findOne(id: number): Promise<string> {
+    const {data} = await firstValueFrom(
+      this.httpService.get(this.msApiUsers, {params: { id }})
+      .pipe(
+        catchError((error: AxiosError) => {
+          this.logger.error(error.response?.data);
+          throw `Failed communication with ${this.msApiUsers}`;
+        }), // -- catchError
+      )
+    );
+    return data;
   }
 
   update(id: number, updateUserDto: UpdateUserDto) {
     return `This action updates a #${id} user`;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} user`;
+  async remove(id: number): Promise<number> {
+    const { data } = await firstValueFrom(
+      this.httpService.delete(`${this.msApiUsers}/${id}`)
+      .pipe(
+        catchError((error: AxiosError) => {
+          this.logger.error(error.response?.data);
+          throw `Failed communication with ${this.msApiUsers}`;
+        }), // -- catchError
+      ), // -- pipe
+    );
+    return data;
   }
 }
