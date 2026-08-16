@@ -60,8 +60,17 @@ export class UsersService {
     return data;
   }
 
-  update(id: number, updateUserDto: UpdateUserDto) {
-    return `This action updates a #${id} user`;
+  async update(id: number, updateUserDto: UpdateUserDto): Promise<UpdateUserDto> {
+    const {data} = await firstValueFrom(
+      this.httpService.patch(`${this.msApiUsers}/${id}`, updateUserDto)
+      .pipe(
+        catchError((error: AxiosError) => {
+          this.logger.error(error.response?.data);
+          throw `Failed communication with ${this.msApiUsers}`;
+        }), // -- catchError
+      )
+    );
+    return data;
   }
 
   async remove(id: number): Promise<number> {
