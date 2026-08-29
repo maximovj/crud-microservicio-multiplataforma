@@ -7,6 +7,7 @@ import {
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { QueryFailedError, Repository } from 'typeorm';
+import { EncryptionService } from '../common/services/encryption.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { User } from './entities/user.entity';
@@ -18,11 +19,20 @@ export class UsersService {
   constructor(
     @InjectRepository(User)
     private usersRepository: Repository<User>,
+    private encryptionService: EncryptionService,
   ) {}
 
   async create(createUserDto: CreateUserDto) {
     try {
-      const user = this.usersRepository.create(createUserDto);
+      // Encriptar contraseña antes de guardar
+      const hashedPassword = await this.encryptionService.hashPassword(
+        createUserDto.password,
+      );
+      // Crear entidad de usuario con contraseña encriptada
+      const user = this.usersRepository.create({
+        ...createUserDto,
+        password: hashedPassword,
+      });
       return await this.usersRepository.save(user);
     } catch (e: any) {
       this.handleCatchError(e, `Hubo un error al crear un nuevo usuario`);
@@ -31,7 +41,29 @@ export class UsersService {
 
   async findAll() {
     try {
-      return await this.usersRepository.find();
+      /**
+      return this.usersRepository
+        .createQueryBuilder('user')
+        .select([
+          'user.id',
+          'user.firstname',
+          'user.lastname',
+          'user.age',
+          'user.email',
+          'user.isActive',
+        ])
+        .getMany();
+      **/
+      return await this.usersRepository.find({
+        select: {
+          id: true,
+          firstname: true,
+          lastname: true,
+          age: true,
+          email: true,
+          isActive: true,
+        },
+      });
     } catch (e: any) {
       this.handleCatchError(e, `Hubo un error al mostrar todos los usuarios`);
     }
@@ -39,8 +71,30 @@ export class UsersService {
 
   async findOne(id: number) {
     try {
+      /**
+      const user = await this.usersRepository
+        .createQueryBuilder('user')
+        .select([
+          'user.id',
+          'user.firstname',
+          'user.lastname',
+          'user.age',
+          'user.email',
+          'user.isActive',
+        ])
+        .andWhere('user.id = :id', { id })
+        .getOne();
+      **/
       const user = await this.usersRepository.findOne({
         where: { id: id },
+        select: {
+          id: true,
+          firstname: true,
+          lastname: true,
+          age: true,
+          email: true,
+          isActive: true,
+        },
       });
       if (!user) {
         throw new NotFoundException(`Usuario con ID (${id}) no encontrado`);
@@ -59,6 +113,12 @@ export class UsersService {
       // Buscar el usuario primero
       const user = await this.findOne(id);
       if (user) {
+        // Si se está actualizando la contraseña, encriptarla
+        if (updateUserDto.password) {
+          updateUserDto.password = await this.encryptionService.hashPassword(
+            updateUserDto.password,
+          );
+        }
         // Actualizar con los nuevos datos
         Object.assign(user, updateUserDto);
         return await this.usersRepository.save(user);
