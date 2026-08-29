@@ -14,7 +14,9 @@ export class User {
   @Column()
   age!: number;
 
-  @Column()
+  @Column({
+    unique: true,
+  })
   email!: string;
 
   @Column()
