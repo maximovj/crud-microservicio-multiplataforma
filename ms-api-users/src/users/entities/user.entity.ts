@@ -5,35 +5,39 @@ export class User {
   @PrimaryGeneratedColumn()
   id!: number;
 
-  @Column({
+  @Column('varchar', {
     nullable: false,
+    length: 60,
   })
   firstname!: string;
 
-  @Column({
+  @Column('varchar', {
     nullable: false,
+    length: 60,
   })
   lastname!: string;
 
-  @Column({
+  @Column('int', {
     nullable: false,
   })
   age!: number;
 
-  @Column({
+  @Column('varchar', {
     nullable: false,
     unique: true,
+    length: 120,
   })
   email!: string;
 
   // select: false, no será visible en la entidad ORM
-  @Column({
+  @Column('varchar', {
     nullable: false,
     select: false,
+    length: 30,
   })
   password!: string;
 
-  @Column({
+  @Column('bool', {
     nullable: false,
     default: true,
   })
