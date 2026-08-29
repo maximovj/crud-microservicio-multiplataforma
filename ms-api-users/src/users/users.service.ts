@@ -33,7 +33,9 @@ export class UsersService {
         ...createUserDto,
         password: hashedPassword,
       });
-      return await this.usersRepository.save(user);
+      const userCreated = await this.usersRepository.save(user);
+      //const { password, ...result } = userCreated;
+      return userCreated;
     } catch (e: any) {
       this.handleCatchError(e, `Hubo un error al crear un nuevo usuario`);
     }

@@ -37,6 +37,7 @@ export class CreateUserDto {
 
   @IsString()
   @MinLength(6)
+  @MaxLength(30)
   password!: string;
 
   @IsBoolean()
