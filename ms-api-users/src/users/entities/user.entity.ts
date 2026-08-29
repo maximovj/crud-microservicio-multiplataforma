@@ -19,7 +19,8 @@ export class User {
   })
   email!: string;
 
-  @Column()
+  // select: false, no será visible en la entidad ORM
+  @Column({ select: false })
   password!: string;
 
   @Column({ default: true })
