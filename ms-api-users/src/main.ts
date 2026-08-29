@@ -1,6 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { Logger, ValidationPipe } from '@nestjs/common';
+import { TransformInterceptor } from './common/interceptors/transform.interceptor';
 
 const port = process.env.PORT ?? 3005;
 const logLevels: ('verbose' | 'debug' | 'log' | 'warn' | 'error' | 'fatal')[] =
@@ -12,6 +13,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
     logger: logLevels,
   });
+  app.useGlobalInterceptors(new TransformInterceptor());
   // Sea agrega prefijo api/
   app.setGlobalPrefix('api');
   app.enableCors();
