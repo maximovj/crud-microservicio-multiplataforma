@@ -24,6 +24,7 @@ import configuration from './config/configuration';
       entities: [User],
       autoLoadEntities: true,
       synchronize: true, // En producción es pone en false
+      logging: false,
     }),
     UsersModule,
   ],
