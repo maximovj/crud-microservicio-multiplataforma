@@ -5,24 +5,37 @@ export class User {
   @PrimaryGeneratedColumn()
   id!: number;
 
-  @Column()
+  @Column({
+    nullable: false,
+  })
   firstname!: string;
 
-  @Column()
+  @Column({
+    nullable: false,
+  })
   lastname!: string;
 
-  @Column()
+  @Column({
+    nullable: false,
+  })
   age!: number;
 
   @Column({
+    nullable: false,
     unique: true,
   })
   email!: string;
 
   // select: false, no será visible en la entidad ORM
-  @Column({ select: false })
+  @Column({
+    nullable: false,
+    select: false,
+  })
   password!: string;
 
-  @Column({ default: true })
+  @Column({
+    nullable: false,
+    default: true,
+  })
   isActive!: boolean;
 }
