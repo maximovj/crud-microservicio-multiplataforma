@@ -1,4 +1,4 @@
-package com.github.maximovj;
+package com.github.maximovj.msapiloans;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
