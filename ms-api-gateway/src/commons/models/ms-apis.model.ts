@@ -1,3 +1,4 @@
 export interface MsUrlApis {
-    msApiUsers: string;
+  msApiUsers: string;
+  msApiLoans: string;
 }

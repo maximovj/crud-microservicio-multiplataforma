@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { ConfigModule } from '@nestjs/config';
+import { LoansModule } from './loans/loans.module';
 import configuration from './config/configuration';
 
 @Module({
@@ -10,7 +11,7 @@ import configuration from './config/configuration';
     envFilePath: '.development.env',
     load: [configuration]
   }), 
-  UsersModule],
+  UsersModule, LoansModule],
   controllers: [AppController],
   providers: [AppService],
 })
