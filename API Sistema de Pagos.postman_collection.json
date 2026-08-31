@@ -125,6 +125,122 @@
               "response": []
             }
           ]
+        },
+        {
+          "name": "loans",
+          "item": [
+            {
+              "name": "findAll",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{URLmsApiGateway}}/api/loans",
+                  "host": [
+                    "{{URLmsApiGateway}}"
+                  ],
+                  "path": [
+                    "api",
+                    "loans"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "findOne",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{URLmsApiGateway}}/api/loans/1",
+                  "host": [
+                    "{{URLmsApiGateway}}"
+                  ],
+                  "path": [
+                    "api",
+                    "loans",
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "create",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"loanId\": 1,\n    \"userId\": 1,\n    \"amount\": 5000.70,\n    \"apr\": 300.30,\n    \"totalInterest\": 300.30,\n    \"monthlyPayment\": 300.30,\n    \"status\": \"PAGADO\",\n    \"rejectionReason\": \"Couta 1\",\n    \"applicationDate\": \"1995-03-14T18:00:00\",\n    \"updatedAt\": \"2026-01-20T03:15:30.123\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{URLmsApiGateway}}/api/loans",
+                  "host": [
+                    "{{URLmsApiGateway}}"
+                  ],
+                  "path": [
+                    "api",
+                    "loans"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update",
+              "request": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"loanId\": 1,\n    \"userId\": 1,\n    \"amount\": 5000.70,\n    \"apr\": 300.30,\n    \"totalInterest\": 300.30,\n    \"monthlyPayment\": 300.30,\n    \"status\": \"PAGADO\",\n    \"rejectionReason\": \"Couta 1\",\n    \"applicationDate\": \"1995-03-14T18:00:00\",\n    \"updatedAt\": \"2026-01-20T03:15:30.123\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{URLmsApiGateway}}/api/loans/1",
+                  "host": [
+                    "{{URLmsApiGateway}}"
+                  ],
+                  "path": [
+                    "api",
+                    "loans",
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "remove",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{URLmsApiGateway}}/api/loans/1",
+                  "host": [
+                    "{{URLmsApiGateway}}"
+                  ],
+                  "path": [
+                    "api",
+                    "loans",
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
         }
       ]
     },
