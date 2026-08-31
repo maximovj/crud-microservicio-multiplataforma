@@ -1,8 +1,6 @@
 package com.github.maximovj.msapiloans.controllers;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -12,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.github.maximovj.msapiloans.dto.request.LoanRequest;
 import com.github.maximovj.msapiloans.dto.response.LoanResponse;
+import com.github.maximovj.msapiloans.services.ILoanService;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -29,32 +28,33 @@ import org.springframework.web.bind.annotation.GetMapping;
     RequestMethod.DELETE 
 })
 public class LoanController {
+
+    @Autowired
+    ILoanService loanService;
+
     @GetMapping()
     public ResponseEntity<?> listarTodos() {
-        List<LoanResponse> loans = new ArrayList<>();
-        loans.add(new LoanResponse());
-        loans.add(new LoanResponse());
-        loans.add(new LoanResponse());
-        return ResponseEntity.ok(loans);
+        return ResponseEntity.ok(loanService.obtenerTodos());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> buscarPorId(@PathVariable Integer id) {
-        return ResponseEntity.ok(new LoanResponse());
+    public ResponseEntity<?> buscarPorId(@PathVariable Long id) {
+        return ResponseEntity.ok(loanService.buscarPorId(id));
     }
     
     @PostMapping()
     public ResponseEntity<?> crear(@RequestBody LoanRequest request) {
-        return ResponseEntity.ok(request);
+        return ResponseEntity.ok(loanService.crear(request));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> actualizar(@PathVariable Integer id, @RequestBody LoanRequest request) {
-        return ResponseEntity.ok(request);
+    public ResponseEntity<?> actualizar(@PathVariable Long id, @RequestBody LoanRequest request) {
+        return ResponseEntity.ok(loanService.actualizar(id, request));
     }
    
     @DeleteMapping("/{id}") 
-    public ResponseEntity<?> eliminar(@PathVariable Integer id) {
+    public ResponseEntity<?> eliminar(@PathVariable Long id) {
+        loanService.eliminar(id);
         return ResponseEntity.ok(null);
     }
 }
