@@ -1,18 +1,15 @@
-package com.github.maximovj.msapiloans.dto.request;
+package com.github.maximovj.msapiloans.entities;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
+
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
-public class LoanRequest {
+public class Loan {
     private Long loanId;
     private Long userId;
     private BigDecimal amount;
@@ -21,6 +18,10 @@ public class LoanRequest {
     private BigDecimal monthlyPayment;
     private String status;
     private String rejectionReason;
+
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     private LocalDateTime applicationDate;
+    
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     private LocalDateTime updatedAt;
 }
