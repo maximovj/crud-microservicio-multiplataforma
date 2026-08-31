@@ -7,6 +7,6 @@ import { HttpModule } from '@nestjs/axios';
 @Module({
   controllers: [UsersController],
   providers: [UsersService],
-  imports: [ConfigModule, HttpModule]
+  imports: [ConfigModule, HttpModule],
 })
 export class UsersModule {}
