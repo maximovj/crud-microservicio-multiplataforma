@@ -8,160 +8,6 @@
   },
   "item": [
     {
-      "name": "ms-api-users",
-      "item": [
-        {
-          "name": "::3005 api/users",
-          "request": {
-            "auth": {
-              "type": "bearer"
-            },
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"name\": \"Jhon\",\r\n    \"lastname\": \"Doe\",\r\n    \"email\": \"jhon.doe.x@example.com\",\r\n    \"password\": \"passwordx\"\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{HOSTmsApiUsers}}/api/users",
-              "host": [
-                "{{HOSTmsApiUsers}}"
-              ],
-              "path": [
-                "api",
-                "users"
-              ]
-            },
-            "description": "Crear un nuevo usuario"
-          },
-          "response": []
-        },
-        {
-          "name": "::3005 api/users",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "auth": {
-              "type": "bearer"
-            },
-            "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "url": {
-              "raw": "{{HOSTmsApiUsers}}/api/users",
-              "host": [
-                "{{HOSTmsApiUsers}}"
-              ],
-              "path": [
-                "api",
-                "users"
-              ]
-            },
-            "description": "Obtener todos los usuarios"
-          },
-          "response": []
-        },
-        {
-          "name": "::3005 api/users/1",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "auth": {
-              "type": "bearer"
-            },
-            "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "url": {
-              "raw": "{{HOSTmsApiUsers}}/api/users/1",
-              "host": [
-                "{{HOSTmsApiUsers}}"
-              ],
-              "path": [
-                "api",
-                "users",
-                "1"
-              ]
-            },
-            "description": "Obtener un usuario por ID"
-          },
-          "response": []
-        },
-        {
-          "name": "::3005 api/users/1",
-          "request": {
-            "auth": {
-              "type": "bearer"
-            },
-            "method": "PATCH",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"name\": \"Jhon\",\n    \"lastname\": \"Doe\",\n    \"email\": \"jhon.doe.x@example.com\",\n    \"password\": \"passwordx\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{HOSTmsApiUsers}}/api/users/1",
-              "host": [
-                "{{HOSTmsApiUsers}}"
-              ],
-              "path": [
-                "api",
-                "users",
-                "1"
-              ]
-            },
-            "description": "Actualizar un usuario por ID"
-          },
-          "response": []
-        },
-        {
-          "name": "::3005 api/users/1",
-          "request": {
-            "auth": {
-              "type": "bearer"
-            },
-            "method": "DELETE",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "url": {
-              "raw": "{{HOSTmsApiUsers}}/api/users/1",
-              "host": [
-                "{{HOSTmsApiUsers}}"
-              ],
-              "path": [
-                "api",
-                "users",
-                "1"
-              ]
-            },
-            "description": "Eliminar un usuario por ID"
-          },
-          "response": []
-        }
-      ]
-    },
-    {
       "name": "ms-api-gateway",
       "item": [
         {
@@ -281,6 +127,276 @@
           ]
         }
       ]
+    },
+    {
+      "name": "ms-api-users",
+      "item": [
+        {
+          "name": "::3005 api/users",
+          "request": {
+            "auth": {
+              "type": "bearer"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"firstname\": \"Jhon\",\r\n    \"lastname\": \"Doe\",\r\n    \"age\": 27,\r\n    \"email\": \"jhon3.doe3.x@example.com\",\r\n    \"password\": \"password\",\r\n    \"isActive\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{HOSTmsApiUsers}}/api/users",
+              "host": [
+                "{{HOSTmsApiUsers}}"
+              ],
+              "path": [
+                "api",
+                "users"
+              ]
+            },
+            "description": "Crear un nuevo usuario"
+          },
+          "response": []
+        },
+        {
+          "name": "::3005 api/users",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer"
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{HOSTmsApiUsers}}/api/users",
+              "host": [
+                "{{HOSTmsApiUsers}}"
+              ],
+              "path": [
+                "api",
+                "users"
+              ]
+            },
+            "description": "Obtener todos los usuarios"
+          },
+          "response": []
+        },
+        {
+          "name": "::3005 api/users/1",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer"
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{HOSTmsApiUsers}}/api/users/1",
+              "host": [
+                "{{HOSTmsApiUsers}}"
+              ],
+              "path": [
+                "api",
+                "users",
+                "1"
+              ]
+            },
+            "description": "Obtener un usuario por ID"
+          },
+          "response": []
+        },
+        {
+          "name": "::3005 api/users/1",
+          "request": {
+            "auth": {
+              "type": "bearer"
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"firstname\": \"Jhon D.\",\n    \"password\": \"p4$$w0rd\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{HOSTmsApiUsers}}/api/users/1",
+              "host": [
+                "{{HOSTmsApiUsers}}"
+              ],
+              "path": [
+                "api",
+                "users",
+                "1"
+              ]
+            },
+            "description": "Actualizar un usuario por ID"
+          },
+          "response": []
+        },
+        {
+          "name": "::3005 api/users/1",
+          "request": {
+            "auth": {
+              "type": "bearer"
+            },
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{HOSTmsApiUsers}}/api/users/5",
+              "host": [
+                "{{HOSTmsApiUsers}}"
+              ],
+              "path": [
+                "api",
+                "users",
+                "5"
+              ]
+            },
+            "description": "Eliminar un usuario por ID"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "ms-api-loans",
+      "item": [
+        {
+          "name": "::8007 api/loans",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HostMsApiLoans}}/api/loans",
+              "host": [
+                "{{HostMsApiLoans}}"
+              ],
+              "path": [
+                "api",
+                "loans"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "::8007 api/loans/1",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HostMsApiLoans}}/api/loans/1",
+              "host": [
+                "{{HostMsApiLoans}}"
+              ],
+              "path": [
+                "api",
+                "loans",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "::8007 api/loans",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"loanId\": 1,\n    \"userId\": 1,\n    \"amount\": 5000.70,\n    \"apr\": 300.30,\n    \"totalInterest\": 300.30,\n    \"monthlyPayment\": 300.30,\n    \"status\": \"PAGADO\",\n    \"rejectionReason\": \"Couta 1\",\n    \"applicationDate\": \"1995-03-14T18:00:00\",\n    \"updatedAt\": \"2026-01-20T03:15:30.123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{HostMsApiLoans}}/api/loans",
+              "host": [
+                "{{HostMsApiLoans}}"
+              ],
+              "path": [
+                "api",
+                "loans"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "::8007 /api/loans/1",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"loanId\": 1,\n    \"userId\": 1,\n    \"amount\": 5000.70,\n    \"apr\": 300.30,\n    \"totalInterest\": 300.30,\n    \"monthlyPayment\": 300.30,\n    \"status\": \"PAGADO\",\n    \"rejectionReason\": \"Couta 1\",\n    \"applicationDate\": \"1995-03-14T18:00:00\",\n    \"updatedAt\": \"2026-01-20T03:15:30.123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{HostMsApiLoans}}/api/loans/1",
+              "host": [
+                "{{HostMsApiLoans}}"
+              ],
+              "path": [
+                "api",
+                "loans",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "::8007 api/loans/1",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{HostMsApiLoans}}/api/loans/1",
+              "host": [
+                "{{HostMsApiLoans}}"
+              ],
+              "path": [
+                "api",
+                "loans",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
     }
   ],
   "event": [
@@ -314,6 +430,10 @@
     },
     {
       "key": "HOSTmsApiUsers",
+      "value": ""
+    },
+    {
+      "key": "HostMsApiLoans",
       "value": ""
     }
   ]
