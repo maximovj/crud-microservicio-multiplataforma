@@ -1,4 +1,4 @@
-package com.github.maximovj;
+package com.github.maximovj.msapiloans;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,0 +1,38 @@
+[
+    {
+        "loanId": 1,
+        "userId": 1,
+        "amount": 5000.70,
+        "apr": 300.30,
+        "totalInterest": 300.30,
+        "monthlyPayment": 300.30,
+        "status": "PAGADO",
+        "rejectionReason": "Couta 1",
+        "applicationDate": "2026-01-20T09:15:30.123Z",
+        "updatedAt": "2026-01-20T09:15:30.123Z"
+    },
+    {
+        "loanId": 2,
+        "userId": 1,
+        "amount": 10000.70,
+        "apr": 200.30,
+        "totalInterest": 200.30,
+        "monthlyPayment": 200.30,
+        "status": "PAGADO",
+        "rejectionReason": "Couta 2",
+        "applicationDate": "2026-01-20T09:15:30.123Z",
+        "updatedAt": "2026-01-20T09:15:30.123Z"
+    },
+    {
+        "loanId": 3,
+        "userId": 1,
+        "amount": 20000.70,
+        "apr": 100.30,
+        "totalInterest": 100.30,
+        "monthlyPayment": 100.30,
+        "status": "PAGADO",
+        "rejectionReason": "Couta 3",
+        "applicationDate": "2026-01-20T09:15:30.123Z",
+        "updatedAt": "2026-01-20T09:15:30.123Z"
+    }
+]
