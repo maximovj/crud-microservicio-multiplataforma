@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:oracle:thin:oracleuser/oraclepassword@//localhost:1521/XEPDB1?defaultRowPrefetch=100&defaultFetchSize=50}
+    username: ${DB_USERNAME:oracleuser}
+    password: ${DB_PASSWORD:oraclepassword}
+  
+  jpa:
+    hibernate:
+      ddl-auto: ${DB_DDL_MODE:create-drop}
+    show-sql: ${DB_LOGGIN_SQL:true}
+    properties:
+      hibernate:
+        format_sql: true
+
+server:
+  port: ${PORT:8007}
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
