@@ -14,26 +14,26 @@ import com.github.maximovj.msapiloans.entities.Loan;
 public interface LoanMapper {
     
     // Mapeo de DTO Request a Entidad
-    @Mapping(target = "loanId")
+    @Mapping(target = "id")
     @Mapping(target = "apr")
     @Mapping(target = "totalInterest")
     @Mapping(target = "monthlyPayment")
     @Mapping(target = "status")
     @Mapping(target = "rejectionReason")
-    @Mapping(target = "applicationDate")
+    @Mapping(target = "createdAt")
     @Mapping(target = "updatedAt")
     Loan toEntity(LoanRequest requestDTO);
     
     // Mapeo de Entidad a Response DTO
-    @Mapping(target = "loanId", source = "loanId")
+    @Mapping(target = "id", source = "id")
     @Mapping(target = "status", source = "status")
-    @Mapping(target = "applicationDate", source = "applicationDate")
+    @Mapping(target = "createdAt", source = "createdAt")
     LoanResponse toResponseDTO(Loan loan);
     
     // Actualización parcial (para updates)
-    @Mapping(target = "loanId", ignore = true)
+    @Mapping(target = "id", ignore = true)
     @Mapping(target = "userId", ignore = true)
-    @Mapping(target = "applicationDate", ignore = true)
+    @Mapping(target = "createdAt", ignore = true)
     @Mapping(target = "updatedAt", ignore = true)
     void updateEntity(@MappingTarget Loan loan, LoanRequest requestDTO);
 

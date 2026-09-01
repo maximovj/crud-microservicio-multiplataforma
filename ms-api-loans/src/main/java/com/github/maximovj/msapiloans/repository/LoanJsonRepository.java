@@ -50,7 +50,7 @@ public class LoanJsonRepository  implements ILoanRepository {
 
     @Override
     public Loan buscarPorId(Long id) {
-        return list.stream().filter(loan -> loan.getLoanId().equals(id)).findFirst().orElseThrow();
+        return list.stream().filter(loan -> loan.getId().equals(id)).findFirst().orElseThrow();
     }
 
     @Override
@@ -60,7 +60,7 @@ public class LoanJsonRepository  implements ILoanRepository {
 
     @Override
     public Loan actualizar(Long id, LoanRequest request) {
-        Loan loan = list.stream().filter(l -> l.getLoanId().equals(id)).findFirst().orElseThrow();
+        Loan loan = list.stream().filter(l -> l.getId().equals(id)).findFirst().orElseThrow();
         return mapper.toEntity(request);
     }
 

@@ -17,8 +17,9 @@ import java.util.List;
 public interface LoanMapperExtended {
     
     // Resumen para listados
-    @Mapping(target = "loanId", source = "loanId")
-    @Mapping(target = "applicationDate", source = "applicationDate")
+    @Mapping(target = "id", source = "id")
+    @Mapping(target = "updatedAt", source = "updatedAt")
+    @Mapping(target = "createdAt", source = "createdAt")
     LoanResponse toSummaryDTO(Loan loan);
     
     // Lista de resúmenes

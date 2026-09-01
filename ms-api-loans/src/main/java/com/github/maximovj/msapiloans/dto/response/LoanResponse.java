@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class LoanResponse {
-    private Long loanId;
+    private Long id;
     private Long userId;
     private BigDecimal amount;
     private BigDecimal apr;
@@ -21,6 +21,6 @@ public class LoanResponse {
     private BigDecimal monthlyPayment;
     private String status;
     private String rejectionReason;
-    private LocalDateTime applicationDate;
+    private LocalDateTime createdAt;
     private LocalDateTime updatedAt;   
 }
