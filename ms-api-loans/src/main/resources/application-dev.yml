@@ -15,6 +15,15 @@ spring:
 server:
   port: ${PORT:8007}
 
+springdoc:
+  swagger-ui:
+    enabled: true
+  api-docs:
+    enabled: true
+  # Configuraciones adicionales para desarrollo
+  show-actuator: true
+  use-management-port: false
+
 logging:
   level:
     org.hibernate.SQL: DEBUG
