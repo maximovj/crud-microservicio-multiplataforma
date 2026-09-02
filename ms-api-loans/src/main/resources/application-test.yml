@@ -12,6 +12,15 @@ spring:
 server:
   port: ${PORT:8008}
 
+springdoc:
+  swagger-ui:
+    enabled: true
+  api-docs:
+    enabled: true
+  # Configuraciones para testing
+  cache:
+    disabled: true
+    
 logging:
   level:
     org.springframework: INFO

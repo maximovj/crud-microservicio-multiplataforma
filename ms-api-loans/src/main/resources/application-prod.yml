@@ -14,6 +14,12 @@ spring:
 server:
   port: ${PORT:8080}
 
+springdoc:
+  swagger-ui:
+    enabled: false  # Deshabilitado en producción
+  api-docs:
+    enabled: false  # Deshabilitado en producción
+
 logging:
   level:
     root: WARN
