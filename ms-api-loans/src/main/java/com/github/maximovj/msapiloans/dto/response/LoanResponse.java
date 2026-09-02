@@ -16,6 +16,11 @@ public class LoanResponse {
     private Long id;
     private Long userId;
     private BigDecimal amount;
+    private BigDecimal income;
+    private Integer loanTerm;
+    private String loanType;
+    private String email;
+    private String phoneNumber;
     private BigDecimal apr;
     private BigDecimal totalInterest;
     private BigDecimal monthlyPayment;
