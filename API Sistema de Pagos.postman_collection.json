@@ -249,37 +249,6 @@
       "item": [
         {
           "name": "::3005 api/users",
-          "request": {
-            "auth": {
-              "type": "bearer"
-            },
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"firstname\": \"Jhon\",\r\n    \"lastname\": \"Doe\",\r\n    \"age\": 27,\r\n    \"email\": \"jhon3.doe3.x@example.com\",\r\n    \"password\": \"password\",\r\n    \"isActive\": true\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{HOSTmsApiUsers}}/api/users",
-              "host": [
-                "{{HOSTmsApiUsers}}"
-              ],
-              "path": [
-                "api",
-                "users"
-              ]
-            },
-            "description": "Crear un nuevo usuario"
-          },
-          "response": []
-        },
-        {
-          "name": "::3005 api/users",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
@@ -334,6 +303,37 @@
               ]
             },
             "description": "Obtener un usuario por ID"
+          },
+          "response": []
+        },
+        {
+          "name": "::3005 api/users",
+          "request": {
+            "auth": {
+              "type": "bearer"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"firstname\": \"Jhon\",\r\n    \"lastname\": \"Doe\",\r\n    \"age\": 27,\r\n    \"email\": \"jhon3.doe3.x@example.com\",\r\n    \"password\": \"password\",\r\n    \"isActive\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{HOSTmsApiUsers}}/api/users",
+              "host": [
+                "{{HOSTmsApiUsers}}"
+              ],
+              "path": [
+                "api",
+                "users"
+              ]
+            },
+            "description": "Crear un nuevo usuario"
           },
           "response": []
         },
@@ -445,7 +445,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"loanId\": 1,\n    \"userId\": 1,\n    \"amount\": 5000.70,\n    \"apr\": 300.30,\n    \"totalInterest\": 300.30,\n    \"monthlyPayment\": 300.30,\n    \"status\": \"PAGADO\",\n    \"rejectionReason\": \"Couta 1\",\n    \"applicationDate\": \"1995-03-14T18:00:00\",\n    \"updatedAt\": \"2026-01-20T03:15:30.123\"\n}",
+              "raw": "{\n    \"userId\": 1,\n    \"amount\": 5000.70,\n    \"income\": 50000.00,\n    \"loanTerm\": 12,\n    \"loanType\": \"PERSONAL\",\n    \"email\": \"usuario1@email.com\",\n    \"phoneNumber\": \"123456789\",\n    \"apr\": 300.30,\n    \"totalInterest\": 300.30,\n    \"monthlyPayment\": 300.30,\n    \"status\": \"COMPLETED\",\n    \"rejectionReason\": \"Cuota 1\",\n    \"createdAt\": \"2026-01-20T09:15:30.123Z\",\n    \"updatedAt\": \"2026-01-20T09:15:30.123Z\"\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -472,7 +472,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"loanId\": 1,\n    \"userId\": 1,\n    \"amount\": 5000.70,\n    \"apr\": 300.30,\n    \"totalInterest\": 300.30,\n    \"monthlyPayment\": 300.30,\n    \"status\": \"PAGADO\",\n    \"rejectionReason\": \"Couta 1\",\n    \"applicationDate\": \"1995-03-14T18:00:00\",\n    \"updatedAt\": \"2026-01-20T03:15:30.123\"\n}",
+              "raw": "{\n    \"amount\": 100.30,\n    \"income\": 100.30,\n    \"loanTerm\": 1,\n    \"loanType\": \"PERSONAL #1\",\n    \"apr\": 100.30,\n    \"totalInterest\": 100.30,\n    \"monthlyPayment\": 100.30,\n    \"status\": \"COMPLETED\",\n    \"rejectionReason\": \"Cuota 1\"\n}",
               "options": {
                 "raw": {
                   "language": "json"

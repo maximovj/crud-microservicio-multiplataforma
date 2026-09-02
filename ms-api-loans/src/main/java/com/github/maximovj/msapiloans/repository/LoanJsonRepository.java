@@ -17,9 +17,8 @@ import com.github.maximovj.msapiloans.dto.request.LoanRequest;
 import com.github.maximovj.msapiloans.entities.Loan;
 import com.github.maximovj.msapiloans.mapper.LoanMapper;
 
-@Primary
 @Repository("jsonLoans")
-public class LoanJsonRepository  implements ILoanRepository {
+public class LoanJsonRepository implements ILoanJsonRepository {
 
     @Autowired
     private LoanMapper mapper;

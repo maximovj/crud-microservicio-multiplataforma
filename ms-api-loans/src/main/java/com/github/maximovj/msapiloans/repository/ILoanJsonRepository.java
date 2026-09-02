@@ -5,7 +5,7 @@ import java.util.List;
 import com.github.maximovj.msapiloans.dto.request.LoanRequest;
 import com.github.maximovj.msapiloans.entities.Loan;
 
-public interface ILoanRepository {
+public interface ILoanJsonRepository {
     List<Loan> obtenerTodos();
     Loan buscarPorId(Long id);
     Loan crear(LoanRequest request);
